@@ -12,4 +12,4 @@ def name_is_valid(name):
 
 
 print(name_is_valid('иван'))
-print(name_is_valid('Иван'))
+print(name_is_valid('Катя'))
