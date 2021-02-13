@@ -33,9 +33,12 @@ for index in parsed:
     f.write(index + '\n')
 
 
-# path = "xml/"
-# os.mkdir(path)
-# urllib.request.urlretrieve(request_url, '/users/xml/')
-# urllib.request.urlretrieve(f, 'xml/списание2')
+path = "xml/"
+os.mkdir(path)
+urllib.request.urlretrieve(request_url, '/users/xml/')
+
 
 f.close()
+
+
+
