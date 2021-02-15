@@ -22,7 +22,5 @@ for i in word_randoms():
     break
 
 
-# word = word_randoms()
-# while True:
-#     print(*next(word))
+
 
