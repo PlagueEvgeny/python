@@ -15,11 +15,15 @@ image_np_conv[:, :, 2][image_np_conv[:, :, 2] <= 215] += 40
 # image_np_conv[:, :, 2] = 175
 
 # new_image = image.filter(ImageFilter.SHARPEN)
-# new_image = image.filter(ImageFilter.DETAIL)
+
 
 new_image = Image.fromarray(image_np_conv.astype('uint8'))
 save_name = 'Zamok_conv.jpg'
 new_image.save(save_name)
+
+new_image_filter = image.filter(ImageFilter.DETAIL)
+save_name = 'Zamok_filter.jpg'
+new_image_filter.save(save_name)
 
 
 
