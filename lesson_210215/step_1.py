@@ -15,5 +15,9 @@ for i in range(len(player_wins) - 3 + 1):
     if min(nums) >= 300:
         # print(nums)
         att.append(tuple(nums))
+<<<<<<< HEAD
 print(type(att_example))
+=======
+# print(att)
+>>>>>>> origin/main
 assert att == att_example, 'wrong result'
