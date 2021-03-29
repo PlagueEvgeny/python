@@ -1,14 +1,14 @@
 FROM alpine:3.12
 
-ARG workdir='/home/kpk'
+ARG workdir='/home/plague'
 
 ENV LANG='en_US.UTF-8' \
     LANGUAGE='en_US:en' \
     LC_ALL='en_US.UTF-8' \
     PYTHONUNBUFFERED=1
 
-ENV KPK_BIN="${workdir}/bin" \
-    KPK_DATA="${workdir}/data"
+ENV PLAGUE_BIN="${workdir}/bin" \
+    PLAGUE_DATA="${workdir}/data"
 
 RUN apk update && \
     apk add --no-cache \
@@ -17,16 +17,18 @@ RUN apk update && \
         py3-pip && \
     rm -rf /var/cache/apk/* /var/tmp/* /tmp/*
 
-RUN pip3 install django==2.2
+RUN pip3 install \
+    django==2.2 \
+    django-debug-toolbar
 
-RUN mkdir -p "$KPK_BIN" \
-    "$KPK_DATA"
+RUN mkdir -p "$PLAGUE_BIN" \
+    "$PLAGUE_DATA"
 
 ADD ./sbin /usr/local/bin
 
 WORKDIR ${workdir}
 
-VOLUME $KPK_DATA
+VOLUME $PLAGUE_DATA
 
 EXPOSE 8000/tcp
 
