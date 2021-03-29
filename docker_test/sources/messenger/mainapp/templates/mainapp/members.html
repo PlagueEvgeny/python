@@ -1,0 +1,12 @@
+{% extends 'mainapp/base.html' %}
+{% block content %}
+        {% for item in member %}
+            <li class="dialog-list">
+                <a class="dialog-list-a" href="" style="text-decoration: none;">
+                    {{ item.sender }}
+                    {{ item.member }}
+                    {{ item.role }}
+                </a>
+            </li>
+        {% endfor %}
+{% endblock %}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page_title|default:"Messenger"|capfirst }}</title>
+    {% block css %}
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/register.css">
+    {% endblock %}
+    {% block js %}
+    <script src="/static/js/register.js"></script>
+    {% endblock %}
+
+</head>
+<body>
+<nav class="navbar">
+    <ul class="navbar-list-ul">
+        <li class="navbar-list"><a class="navbar-list-a active" href="{% url 'main:index' %}">Home</a></li>
+        <li class="navbar-list"><a class="navbar-list-a" href="#">News</a></li>
+        <li class="navbar-list"><a class="navbar-list-a" href="#">Contact</a></li>
+        {% if user.is_authenticated %}
+        <li class="navbar-list" style="float:right"><a class="navbar-list-a" href="{% url 'auth:logout' %}">Logout</a>
+        </li>
+        <li class="navbar-list" style="float:right"><p class="list-p">{{ user.username }}</p></li>
+        {% endif %}
+    </ul>
+</nav>
+{% block content %}
+{% endblock %}
+</body>
+</html>

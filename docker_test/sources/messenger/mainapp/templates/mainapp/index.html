@@ -1,26 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ page_title|capfirst }}</title>
-</head>
-<body>
-{% if user.is_authenticated %}
-<div>
-    <span>{{ user.username }}</span>
-    <a href="{% url 'auth:logout' %}">logout</a>
-</div>
-{% endif %}
-<h3>Активные диалоги</h3>
-<div class="dialogues-list">
-    <ul>
+{% extends 'mainapp/base.html' %}
+{% block content %}
+
+
+<h1 style="text-align:center">Активные диалоги</h1>
+<div class="dialogues-block">
+    <ul class="dialogues-ul">
         {% for item in dialogues %}
-            <li>
-                <a href="#" style="text-decoration: none;">
+            <li class="dialog-list">
+                <a class="dialog-list-a" href="{% url 'main:members' item.pk %}" style="text-decoration: none;">
                     {{ item.dialog.created }} - {{ item.dialog.name }}
                 </a>
             </li>
         {% endfor %}
     </ul>
 </div>
-</body>
+{% endblock %}
