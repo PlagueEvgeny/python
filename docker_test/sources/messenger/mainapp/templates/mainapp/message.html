@@ -1,0 +1,13 @@
+{% extends 'mainapp/base.html' %}
+{% block content %}
+    <div>
+        {% for item in messages %}
+            <ul class="dialog-list">
+                    <li>{{ item.sender }}
+                    <li>{{ item.text }}
+                    <li>{{ item.read }}
+                    <li>{{ item.created }}
+            </ul>
+        {% endfor %}
+    </div>
+{% endblock %}

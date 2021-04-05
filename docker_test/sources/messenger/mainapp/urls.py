@@ -5,5 +5,5 @@ app_name = 'mainapp'
 
 urlpatterns = [
     path('', mainapp.index, name='index'),
-    path('members/<int:members_pk>', mainapp.members, name='members'),
+    path('message/<int:message_pk>', mainapp.message, name='message'),
 ]

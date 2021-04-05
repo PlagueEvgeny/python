@@ -7,7 +7,7 @@
     <ul class="dialogues-ul">
         {% for item in dialogues %}
             <li class="dialog-list">
-                <a class="dialog-list-a" href="{% url 'main:members' item.pk %}" style="text-decoration: none;">
+                <a class="dialog-list-a" href="{% url 'main:message' item.pk %}" style="text-decoration: none;">
                     {{ item.dialog.created }} - {{ item.dialog.name }}
                 </a>
             </li>
